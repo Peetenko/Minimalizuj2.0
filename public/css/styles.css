@@ -1,0 +1,1281 @@
+
+    html, body {
+        background-color: #fff;
+        color: #636b6f;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 200;
+        letter-spacing: 1px;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(229,229,233,1) 100%, rgba(255,255,255,1) 100%);
+    }
+
+    .h50{
+        height: 50px;
+        width: 50%
+    }
+
+    #PT_logo_animated{
+        max-width: 400px;
+        display: block;
+          margin-left: auto;
+          margin-right: auto;   
+          width: 80%;
+    }
+
+    .shadow {
+         -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+        -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+         
+         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+    .container{
+        padding: 0px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        vertical-align: top;
+        background: rgb(255,255,255);
+        background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(229,229,233,1) 100%, rgba(255,255,255,1) 100%);
+    }
+
+    .center{
+        text-align: center;
+    }
+
+    .divLeft{
+        width: 20%;
+        height: 100%;
+        float: left;
+        background: #F2F2F2;
+        border: 2px solid #F2F2F2;
+        padding: 10px;
+    }
+
+    .divCenter{
+        width: 60%;
+        height: 100%;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        align-content: center;
+        align-items: center;
+        display: inline-block;
+        margin:0 auto;
+        margin-bottom: 100px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .divRight{
+        width: 20%;
+        height: 100%;
+        
+        background: #F2F2F2;
+        border: 2px solid #F2F2F2;
+        float: right;
+        padding: 10px;
+
+    }
+
+    .full-height {
+        height: 100vh;
+    }
+
+    .flex-center {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .position-ref {
+        position: relative;
+    }
+
+    .top-right {
+        position: absolute;
+        right: 10px;
+        top: 18px;
+    }
+
+    .content {
+        text-align: center;
+    }
+
+    .title {
+        font-size: 84px;
+    }
+
+    .links > a {
+        color: #636b6f;
+        padding: 0 25px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: .1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .m-b-md {
+        margin-bottom: 30px;
+    }
+
+    nav{
+        width: 60%;
+        margin: auto;
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        margin-top: 0px;
+        height: auto;
+        display: none;
+
+    }
+
+    #horizontalNav{
+        width: 60%;
+        display: block;
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(46,46,46,1) 0%, rgba(140,140,140,1) 50%, rgba(46,46,46,1) 100%, rgba(2,0,36,1) 100%);
+        font-weight: normal;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        display: none;
+    }
+
+    #logoDots{
+        width: 40px;
+    }
+
+    .minimalizuj{
+        vertical-align: middle;
+        position: relative;left: 10px;top: 10px;
+        float: left;
+        color: 808080ff;
+    }
+
+    #btnMenu{
+        width: 60px;
+        height: 40px;
+        color: white;
+        text-align: center;
+        vertical-align: middle;
+        background: transparent;
+        border: 0px;
+        border-radius: 0px;
+        margin-right: 0px;
+        margin-top: 5px;
+        letter-spacing: 2px;
+        font-weight: bold;
+    }
+
+    .btnAddProduct{
+        text-align: center;
+        position: relative;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        width: 90px;
+        height: 90px;
+        background:#dbffb3;
+        float: right;
+        margin-right: 10px;
+        font-size: 18pt;
+        color: #659e26;
+        border-radius: 10px;
+        border-bottom: solid 2px #7ae555;
+    }
+
+    .btnClear{
+        text-align: center;
+        position: relative;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        width: 90px;
+        height: 90px;
+        background:#ff6666;
+        float: right;
+        margin-right: 10px;
+        font-size: 18pt;
+        color: #cc0000;
+        border-radius: 10px;
+        border-bottom: solid 2px #cc0000;
+    }
+
+    .navLinks {
+        color: white;
+        text-align: center;
+        vertical-align: middle;
+        text-decoration: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 250;
+    }
+
+    .navLinks:visited {
+        color: #F2F2F2;
+        text-decoration: none;
+    }
+
+    .navLinks:hover {
+        color: #d9d9d9;
+        text-decoration: none;
+    }  
+
+    .divLink{
+        background: linear-gradient(135deg,  rgba(140,140,140,1) 0%, rgb(69, 68, 68) 50%, rgba(140,140,140,1) 100%);
+        width: 100%;
+        height: 30px;
+        padding-top: 5px;
+        border-bottom: 1px solid  #F2F2F2;
+        align-content: center;
+        letter-spacing:3px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        
+
+    } 
+
+    .divLink:hover {
+        background: #2E2E2E;
+    }
+
+    .navLogo{
+        width: 40px;
+        margin: 5px;
+        padding-left: 5px;
+        float: left;
+        display: block;
+    }  
+
+    #minimalizuj{
+        float: left;
+        padding: 12px;
+        color: white;
+        vertical-align: middle;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    #menejJeViac{
+        float: right;
+        padding: 12px;
+        color: white;
+        vertical-align: middle;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .divNav{
+        width: 60%;
+        height: 50px;
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg,
+            rgba(2,0,36,1) 0%,
+            rgba(46,46,46,1) 0%,
+            rgba(140,140,140,1) 50%, 
+            rgba(46,46,46,1) 100%,
+            rgba(2,0,36,1) 100%);
+        vertical-align: middle;
+        text-align: center;
+        margin:0 auto;
+        overflow: hidden;
+        
+
+    } 
+
+    .divBox{
+        display: inline-flex;
+        width: 80px;
+        height: 80px;
+        border: 2px solid #d9d9d9;
+        text-align: center;
+        align-items: center;
+        border-radius: 10px;
+        margin: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+    }
+
+    .productAmount{
+        width: 30%;
+        height: 35px;
+        float: left;
+        margin: 0 auto;
+        display: inline-block;
+        vertical-align: center;
+        position: relative;
+        top:  20%;
+        border: 0px;
+        //border-radius: 10px;
+        border-bottom: solid 2px;
+        border-color: #d9d9d9;
+        text-align: center;
+
+    }
+
+    .measure {
+        float: left;
+        width: 30%;
+        height: 35px;
+        display: inline-block;
+        position: relative;
+        top: 20%;
+        border: 0px;
+        border-color: #d9d9d9;
+        text-align: center;
+
+        
+    }
+
+    .dateExpired{
+        float: left; 
+        width: 30%;
+        position: relative;
+        display: inline-block;
+        height: 35px;
+        border: 0px;
+        border-bottom: solid 2px;
+        border-color: #d9d9d9;
+        top: 20%;
+    }
+
+    .expirationText{
+        font-size: 9pt;
+        font-weight: 200;
+        position: relative;bottom: 8px;
+        color: #517E1E;
+    }
+
+    .red{
+        color:red;
+        text-decoration: blink;
+    }
+
+    .orange{
+        color:orange;
+    }
+
+    .date80p{
+      position: absolute;top:5px;left:55px;
+      width: 50%;
+      height: 80%; 
+      border-radius: 5px; 
+      border: solid 1px #2E2E2E;
+    }
+
+    .tick{
+        font-size:40px;
+        position: absolute;
+        right:5px;
+        color: #517E1E;
+    }
+
+    .centerText{
+        margin: auto;
+        text-align: center;
+
+    }
+
+    .divPost{
+        position: relative;
+        width: 100%;
+        height: 10%;
+        margin: 0 auto;
+        background: white;
+        display: inline-block;
+        border-top: 0px;
+        border-radius: 10px;
+        border-bottom:  solid 2px;
+        border-color: #d9d9d9;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        vertical-align: middle;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .divFilter{
+        position: relative;
+        width: 100%;
+        height: 10%;
+        margin: 0 auto;
+        background: white;
+        display: inline-block;
+        border-top: 0px;
+        border-radius: 10px;
+        border-bottom:  solid 2px;
+        border-color: #d9d9d9;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        vertical-align: middle;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    }
+
+    .divSellCreate{
+        padding: 10px;
+
+    }
+    .divSections{
+        margin: 0 auto;
+        width: 95%;
+        align-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        padding-bottom: 10px;
+        
+       
+    }
+
+    .divPostButtons{
+        margin: auto;
+        width: 100%;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+
+    .smallPlusButton{
+        margin-top:5px;
+        width: 30px;
+        height: 30px;
+        margin-bottom: 5px;
+        text-align: center;
+        border-bottom: solid 2px #7ae555;
+        display: inline-block;
+        position: relative;left: 5px;
+        color: #659e26;
+    }
+
+    .divTitle{
+        text-align: center;
+        padding: 0px;
+        width: 100%;
+        height: 30px;
+        background: #F2F2F2;
+        border-bottom:  solid 2px;
+        border-color: #d9d9d9;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px; 
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .divTitle2{
+        text-align: left;
+        min-height: 20px;
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 95%;
+        font-weight: normal;
+        background: white;
+        margin: 0px; 
+        color: #2E2E2E;;
+    }
+
+
+    .divText {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        height: 40%;
+        letter-spacing: 1px;
+        font-size: 13px;  
+        color: black;
+    }
+
+
+
+    .divRow{
+        width: 99%;
+        padding: 5px;
+        padding-left: 5px;  
+        padding-right: 5px; 
+        height: 100%;          
+    }
+
+    .divRow2{
+        display: inline-block;
+        width: 99%;
+        padding-left: 5px;  
+        padding-right: 5px; 
+        padding: 5px;
+
+    }
+
+    .divRow100{
+        //width: 100%;
+        padding: 5px;
+        padding-left: 5px;  
+        padding-right: 5px; 
+        height: 100px;  
+        margin-top: 5px;
+        margin-bottom: 5px;
+        background: white; 
+        border-radius: 10px;       
+    }
+
+    .divRow200{
+        width: 100%;
+        padding: 5px;
+        padding-left: 5px;  
+        padding-right: 5px; 
+        height: 200px; 
+        background: white;         
+    }
+
+    .divRow250{
+        //width: 100%;
+        padding: 5px;
+        padding-left: 5px;  
+        padding-right: 5px; 
+        height: 220px; 
+        background: white;    
+        border-radius: 10px;  
+        margin-bottom: 10px;
+        margin-top: 10px; 
+    }
+
+      .divRow50{
+        border-radius: 10px;
+        padding: 5px;
+        padding-left: 5px;  
+        padding-right: 5px; 
+        height: 50px; 
+                 
+    }
+
+    .divRowDetail{
+        display: none;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        z-index: 9;
+        position: absolute;
+        top:0;
+        left:0;
+        opacity: 0.9;
+        background: #F2F2F2; 
+        border-radius: 10px;
+        vertical-align: baseline;
+
+         
+    }
+
+    .divColumnLeft{
+        width: 20%;
+        padding-left: 5px;
+        position: relative;left: 5px;    
+        display: inline-block;   
+        float: left;  
+    }
+
+    .divColumnRight{
+        width: 75%;
+        
+        position: relative;right: 5px;
+        position: relative;top: 5px;
+        display: inline-block;
+        float: right;
+    }
+
+    .divName {
+        color: Green;
+        width: 35%;
+        height: 20%;
+        padding-left: 5px;
+        float: left;
+        display: inline-flex;
+        display: flex; justify-content: flex-start; 
+    }
+
+    .divPrice{
+        width: 10%;
+        height: 20%;
+        margin-right: 0px;  
+        float: left;
+        display: inline-flex;
+        display: flex; justify-content: flex-end;
+        text-align: center;
+        position: relative; bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .greenFont{
+        color: green;  
+    }
+
+    .green{
+        color:#517E1E;
+    }
+
+    .divTimestamp {
+        float: right;
+        width: 35% ; 
+        height: 20%;
+        margin-right: 0px;  
+        padding-right: 10px;
+        display: inline-flex;
+        text-align: right;
+        display: flex; justify-content: flex-end;
+        position: relative; bottom: 0px;
+        word-wrap: none;
+    }
+
+    .divPhone {
+        float: left;
+        width: 95% ; 
+        height: 20%;
+        padding-left: 10px;
+        display: inline-flex;
+        display: flex; justify-content: flex-start;
+        background: white;
+
+    }
+
+    .divEmail {
+        float: left;
+        width: 95% ; 
+        height: 20%;
+        margin-right: 0px;  
+        padding-left: 10px;
+        display: inline-flex;
+        display: flex; justify-content: flex-start;
+        background-color: white;
+    }
+
+    .donateGallery{
+        border-radius: 10px;
+
+
+    }
+
+    #newPost{
+        background: #dbffb3;
+        color:#659e26;
+        width: 25%;
+        height: 35px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        border-bottom: solid 2px #7ae555;
+        margin: auto;
+        text-align: center;
+        margin-top: 10px;
+        font-weight: normal;
+        letter-spacing: 3px;
+        
+        
+    }
+
+    .newPost{
+        background:  #dbffb3;
+        width: 25%;
+        height: 35px;
+        color:  #2E2E2E;
+        margin-left: 0px;
+        margin-right: 0px;
+        border-radius: 10px;
+        border-bottom: solid 2px #7ae555;
+        margin: auto;
+        text-align: center;
+        margin-top: 10px;
+        font-weight: normal;
+        letter-spacing: 3px;
+        font-variant-caps: petite-caps;
+    }
+
+
+    .newPostInput{
+         color: #2E2E2E;
+         width: 98%;
+         min-height: 200px;    
+         border:0px;
+         padding-bottom: 5px;
+         padding-top: 5px;
+         border-bottom:  solid 2px;
+         border-color: #d9d9d9;
+         margin-bottom: 10px;   
+    }
+
+    .textArea150{
+         color: #2E2E2E;
+         width: 100%;
+         min-height: 150px;    
+         border:0px;
+         padding-bottom: 5px;
+         padding-top: 5px;
+         border-bottom:  solid 2px;
+         border-color: #d9d9d9;
+          
+    }
+
+    .divNewComment{
+        padding-left:10px;
+        padding-right: 10px;
+    }
+
+    .divComment{
+        width: 95%;
+        background: #d9d9d9;
+        padding-right: 0px;
+        padding-left: 0px;
+        color: white;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        display: inline-block;
+        border-radius: 10px;
+        padding-bottom: 10px;
+        box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 19%);
+    }
+
+    .divGallery{
+        margin-left: 0px;
+        margin-top: 10px;
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        border-radius: 10px;
+
+    }
+
+    .textTypeInput {
+        width: 99%;
+        margin: 5px;
+    }
+
+    .padleft10{
+        padding-left: 10px;
+    }
+
+    .spanProduct{
+      float: left;
+      width: 100%;
+      color: #2E2E2E;
+      padding-top: 5px;
+      white-space: nowrap;
+      font-weight: 200;
+      vertical-align: middle;
+    }
+
+    .delProduct{
+        font-size:30px;
+        width: 30px;
+        float: right;
+        color: red;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .spanAmount{
+      float: left;
+      width: 70%;
+      color: #2E2E2E;
+      padding-top: 5px;
+      white-space: nowrap;
+      font-weight: 200;
+    }
+
+    .divProduct{
+        display: inline-block;
+        height: 100px;
+        position: relative;top: 0px;
+    }
+
+    .recipeImage{
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .divRecipeImage{
+        width: 100%;
+        height: 250px;
+        background-size: cover;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        
+    }
+    .divImage{
+        margin: 10px;
+    }
+
+
+    h1{
+        color: #2E2E2E;  
+        margin:  0px; 
+        text-align: center;
+        font-size: 14px;
+        padding: 5px;
+        font-weight: 300;
+    }
+    
+    h2{
+        color: #517E1E;  
+        margin:  0px; 
+        padding: 5px;
+        padding-top: 0px;
+        font-size: 12pt;
+        font-weight: 300;
+    }
+
+    h3{
+        color: #2E2E2E;  
+        margin:  0px; 
+        font-size: 7pt;
+        font-weight: 200;
+    }
+    .aEmail{
+        color: #2E2E2E;  
+        margin:  0px; 
+        font-size: 7pt;
+        text-decoration: none;
+    }
+
+    p{
+        font-size: 10pt;
+        color: black;
+        margin-bottom: 0px;
+        margin-top: 0px;        
+    }
+
+    a{
+        text-decoration: none;
+    }
+    a:visit{
+        color: #2E2E2E
+    }
+
+
+    input[type="text"]{
+        display: block;
+        margin-bottom: 5px;
+        min-height: 30px;
+        padding-left: 10px;
+    }
+    input[type="password"]{
+        display: block;
+        margin-bottom: 5px;
+        min-height: 30px;
+        padding-left: 10px;
+    }
+
+    button[type="submit"]{
+        border-radius: 5px;
+        width: 120px;
+        height: 30px;
+        border: 0px;
+        background: #FFF4CC;
+    }
+    button{
+
+        border-radius: 5px;
+        width: 60px;
+        height: 30px;
+        border: 0px;
+        background: #dbffb3;
+    }
+    input[type="submit"]{
+        background: #FFF4CC;
+        width: 25%;
+        height: 35px;
+        color:  #2E2E2E;
+        margin-left: 0px;
+        margin-right: 0px;
+        border-radius: 10px;
+        border-bottom: solid 2px #cca300;
+        border-left: 0px;
+        border-right: 0px;
+        border-top: 0px;
+        margin: auto;
+        text-align: center;
+        margin-top: 10px;
+        font-weight: normal;
+        letter-spacing: 3px;
+    }
+
+    textarea{
+        display: block;
+        min-height: 100px;
+        padding-top: 10px;
+    }        
+
+    label{
+        color: #2E2E2E;;
+        font-weight: bold;
+    }
+
+    .pd-mg-10 {
+        margin: 10px;
+    }
+    .mgTop10{
+        margin-top: 10px;
+    }
+    .mgLeft10{
+        margin-left: 10px;
+    }
+    .mgLeft5{
+        margin-left: 5px;
+    }
+    .rightFloat{
+        float: right;
+    }
+
+    .newSelect{
+        height: 60px;
+        width: 95%;
+        border-radius: 5px;
+    }
+
+    .icons {
+        width: 10px;
+        margin-right: 3px;
+
+    }
+
+    .signin{
+        position: absolute;right:10px;top:15px;
+        width: 20px; 
+    }
+
+    .reg{
+        text-align: center;
+        padding-top: 5px;
+    }
+
+    .cart{
+        position: absolute;left:10px;top:15px;
+        width: 20px; 
+    }
+
+    #cartCount{
+        color: #dbffb3;
+        position: absolute;left:30px;top:15px;
+    }
+
+    .menuIcon{
+        width: 20px;
+        vertical-align: middle;
+    }
+
+    .footer{
+        width: 100%;
+        height: 50px;
+        margin-top: auto;
+        bottom: 0;
+        border-bottom: solid 2px;
+        align-content: center; 
+        border-color: #d9d9d9;
+        margin-top: 10px;
+        position: fixed;
+        display: flex;
+        background: rgb(217,217,217);
+        background: linear-gradient(90deg, rgba(217,217,217,1) 0%, rgba(242,242,242,1) 49%, rgba(217,217,217,1) 100%);
+    }
+
+    .ptLogo {
+        align-self: center;
+        text-align: center;
+        margin: auto;
+        width: 50%;
+    }
+
+    .jsLogoSqare{
+        background-color: white;
+        padding: 0px;
+        font-size: 0px;
+        text-align: center;
+        width: 5px;
+        height: 5px;
+    }
+
+    .jsLogoContainer{
+        display: grid;
+        grid-gap: 0px;
+        grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+        background-color: white;
+        padding: 0px;
+        width: 50px;
+        margin: 0 auto;
+            }
+
+    .foodSection{
+        width: 100px;
+        height: 100px;
+        border-radius: 5px;
+        border: solid 0px #2E2E2E;
+        display: inline-flex;
+        margin: 5px;
+        text-align: center;
+        align-content: center;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .foodProduct{
+        width: 90px;
+        height: 90px;
+        border-radius: 10px;
+        border: solid 0px #2E2E2E;
+        display: inline-block;
+        margin: 5px;
+        text-align: center;
+        align-content: center;
+        align-items: center;
+        text-decoration: none;
+        float: left;
+    }
+
+    .foodProductSmall{
+        width: 45px;
+        height: 45px;
+        border-radius: 5px;
+        border: solid 0px #2E2E2E;
+        display: inline-block;
+        margin: 5px;
+        text-align: center;
+        align-content: center;
+        align-items: center;
+        text-decoration: none;
+        float: left;
+        background-size: 45px;
+    }
+    .foodProductText{
+        display: inline-block;
+        margin: 0 auto;
+        padding-left: 5px;
+        width: 40%;
+        height: 100px;
+        float: left;
+        vertical-align: center;
+        text-align: left;
+    }
+
+    .foodProductTextSmall{
+        display: table-cell;
+        margin: 0 auto;
+        padding-left: 10px;
+        padding-top: 10px;
+        width: 40%;
+        height: 40px;
+        float: left;
+        text-align: left; 
+    }
+
+
+    .foodProductTextSmall2{
+        display: table-cell;
+        margin: 0 auto;
+        padding-left: 10px;
+        padding-top: 10px;
+        width: 30%;
+        height: 40px;
+        float: right;
+        text-align: left; 
+    }
+
+    .divAmount{
+        height: 100px;
+        width: 100px;
+        display: inline-block;
+        float: right;
+    }
+
+    .success{
+        color:green;
+        margin:5px; 
+        padding: 10px;
+        font-weight: bold; 
+        text-align: center;
+        display: none;
+        position: fixed;bottom: 5%;
+        background: #dbffb3;
+        border-radius: 10px;
+        width: 95%;
+        z-index: 100;
+    }
+
+    .font10pt{
+        font-size: 8pt;
+    }
+
+    .page-item{
+        display: inline-block;
+        color: #517E1E;
+    }
+    .pagination{
+        text-align: center;
+        padding-left: 0px;
+    }
+
+
+
+
+
+  
+
+    @media only screen and (max-width:3440px){
+        
+        .cart{
+            position: relative;
+            top:15px;
+            right:10px;
+            float: left;
+        }
+        .signin{
+            position: relative;
+            top:15px;
+            right:10px;
+            float: right;
+        }
+        #cartCount{
+            position: relative;
+            top: 10px;
+            left:5px;
+            float:left;
+            font-size: 11pt;
+        }
+        .success{
+            width: 55%;
+        }
+
+    }
+
+      @media only screen and (max-width: 1050px) {
+      .divCenter,.divNav,nav,#horizontalNav{ 
+        width: 100%;
+        }
+        .foodProductText{
+            width: 70%;
+        }
+        .success{
+            width: 95%;
+        }
+
+      }
+
+    @media only screen and (max-width: 365px) {
+        .foodProductTextSmall{ 
+            width: 30%;
+            display: inline-block;
+
+        }
+        .spanAmount{
+            text-align: right;
+            width: 55px;
+            font-size:12px;
+
+        }
+
+        .delProduct{
+            font-size: 20px;
+            width: 20px;
+            position: relative;
+            top: 6px;
+        }
+
+        .spanProduct{
+            font-size: 12px;
+            font-weight: 200;
+        }
+        .foodProductTextSmall2{
+            width: 30%;
+        }
+        .btnAddProduct{
+            width: 45px;
+            height: 45px;
+        }
+        .divAmount{
+            width: 50px;
+        }
+        .foodProductText{
+            width: 50%;
+        }
+        .divTimestamp{
+            width: 40%;
+            font-size: 6pt;
+        }
+
+    }
+
+    
+
+    @media only screen and (max-width: 800px) {
+        .divColumnRight{
+            width: 70%;
+            height: 100%;
+        }
+        .divColumnLeft{
+            width: 25%;
+        }
+        .divName{
+            width: 45%;
+        }
+     
+        .divEmail{
+            width: 95%;
+        }
+        .divPhone{
+            width: 95%;
+        }
+        #newPost{
+            width: 95%;
+        }
+        .foodProductText{
+            width: 50%;
+        }
+
+    }
+
+
+     @media only screen and (max-width: 700px){
+        #horizontalNav{display: none;}
+       
+     } 
+
+     @media only screen and (min-width: 901px){
+        #horizontalNav{display: block;}
+     } 
+
+    @media only screen and (max-width: 450px) {
+      .foodProductText{
+            width: 40%;
+        }
+        
+
+    }
+
+        @media only screen and (max-width: 400px) {
+        .divColumnRight{
+            width: 70%;
+            height: 100%;
+        }
+        .divColumnLeft{
+            width: 20%;
+        }
+        .divGallery{
+            width: 75px;
+            height: 75px;
+        }
+        .divName{
+            width: 45%;
+        }
+     
+        .divEmail{
+            width: 95%;
+        }
+        .divPhone{
+            width: 95%;
+        }
+        #newPost{
+            width: 95%;
+        }
+        
+
+
+    }
