@@ -129,7 +129,11 @@ class foodController extends Controller
 		$recipeFields = DB::table('recipeFields')
 			->select('*')
 			->get();
-		//$cart = cartController::cart();	
+			if(Session::get('product')){
+				$cart = Session::get('product'); 
+			}else{
+				$cart =  0;
+			}
 		return view('recipes.create',compact('recipeFields','cart'));
 	}
 

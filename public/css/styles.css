@@ -312,7 +312,6 @@
         position: relative;
         top:  20%;
         border: 0px;
-        //border-radius: 10px;
         border-bottom: solid 2px;
         border-color: #d9d9d9;
         text-align: center;
@@ -857,12 +856,14 @@
         margin-bottom: 5px;
         min-height: 30px;
         padding-left: 10px;
+        border-radius: 10px;
     }
     input[type="password"]{
         display: block;
         margin-bottom: 5px;
         min-height: 30px;
         padding-left: 10px;
+        border-radius: 10px;
     }
 
     button[type="submit"]{
@@ -1159,11 +1160,15 @@
 
       }
 
-    @media only screen and (max-width: 365px) {
+    @media only screen and (max-width: 375px) {
         .foodProductTextSmall{ 
             width: 30%;
             display: inline-block;
 
+        }
+        .foodSection{
+            width: 80px;
+            height: 80px;
         }
         .spanAmount{
             text-align: right;
