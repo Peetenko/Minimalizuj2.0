@@ -126,7 +126,7 @@ class foodController extends Controller
 
 	public function recipeCreate(){
 		
-		$recipeFields = DB::table('recipeFields')
+		$recipeFields = DB::table('recipefields')
 			->select('*')
 			->get();
 			if(Session::get('product')){
