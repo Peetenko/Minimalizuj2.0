@@ -72,7 +72,8 @@ class foodController extends Controller
 			'amount' => $amount,
 			'measure' => $measure,
 			'dateExpired' => $dateExpired,
-			'icon' => $icon
+			'icon' => $icon,
+			'crossed' => 0
 			]);
 		}else{
 			Session::put('product',[['id' => $product[0]->id,
@@ -80,7 +81,8 @@ class foodController extends Controller
 			'amount' => $amount,
 			'measure' => $measure,
 			'dateExpired' => $dateExpired,
-			'icon' => $icon
+			'icon' => $icon,
+			'crossed' => 0
 			]]);
 		}
 

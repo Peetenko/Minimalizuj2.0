@@ -106,6 +106,7 @@ Route::group(['middleware' => ['underConstruction']], function (){
 	Route::post('/cart/toWarehouse',[cartController::class,'toWarehouse']);
 	Route::get('/cart/toWarehouse',[cartController::class,'toWarehouse']);
 	Route::post('/cart/del/{product}',[cartController::class,'delFromCart']);
+	Route::post('/cart/add/linethrough',[cartController::class,'addLinethrough']);
 
 	//store routes
 	Route::get('/store',[foodController::class,'store']);

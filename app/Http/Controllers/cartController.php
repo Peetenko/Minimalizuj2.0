@@ -17,7 +17,8 @@ class cartController extends Controller
         }else{
             $cart =  0;
         }
-        
+       
+        //dd($cart);
         return view('cart',compact('cart'));
     }
 
@@ -34,7 +35,7 @@ class cartController extends Controller
         
     }
 
-    public function toWarehouse(){
+    public function toWarehouse(Request $request){
         //dd('warehouse');
         if(Auth::user()->id){
             if(Session::get('product')){
@@ -50,15 +51,29 @@ class cartController extends Controller
                         $dateExpired = $product['dateExpired'];
                     }
 
-                    $store = new Store();
-                    $store->amount = $product['amount'];
-                    $store->product_id = $product['id'];
-                    $store->measure = $product['measure'];
-                    $store->expiration = $dateExpired;
-                    $store->order = $order;
-                    $store->user_id = Auth::user()->id;
-                    $store->save();   
+                    if($request->crossed == 'crossed' && $product['crossed'] == 1){
+                        $store = new Store();
+                        $store->amount = $product['amount'];
+                        $store->product_id = $product['id'];
+                        $store->measure = $product['measure'];
+                        $store->expiration = $dateExpired;
+                        $store->order = $order;
+                        $store->user_id = Auth::user()->id;
+                        $store->save();  
+                    }elseif($request->crossed == 'normal'){
+                        $store = new Store();
+                        $store->amount = $product['amount'];
+                        $store->product_id = $product['id'];
+                        $store->measure = $product['measure'];
+                        $store->expiration = $dateExpired;
+                        $store->order = $order;
+                        $store->user_id = Auth::user()->id;
+                        $store->save(); 
+                    }
+                     
             }
+
+
             session()->forget('product');
             return response($cart);
             }else{
@@ -68,6 +83,26 @@ class cartController extends Controller
             return response('0');
         }
         
+    }
+
+    public function addLinethrough(Request $request){
+        $productId = $request->productId;
+        $crossed = $request->crossed;
+        $cart = Session::get('product');
+        $count = 0;
+        foreach($cart as $product){
+            $count = $count + 1;
+            //return response($product);
+           if($product['id'] == $productId){
+                $position = $count - 1;
+                $cart[$position]['crossed'] = 1;
+            }
+        }
+        $updatedCart = $cart;
+        Session::forget('product');
+        Session::put('product',$updatedCart);
+        return response('check');
+        //return response($productId);
     }
     
 }

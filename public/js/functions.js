@@ -239,15 +239,16 @@ function fnUpdateExpiration(storeId) {
 function fnToWarehouse(crossed){
     
     let _token = $('meta[name="csrf-token"]').attr('content');
-    if(crossed){
+    if(crossed == 'crossed'){
         console.log('preciarknute');
     }
-    console.log(_token);
+    console.log(crossed);
     $.ajax({
         url: "/cart/toWarehouse/",
         type:"POST",
         data:{
-            _token: _token    
+            _token: _token,
+            crossed: crossed    
         },
         success:function(response){
             console.log(response);
@@ -448,7 +449,23 @@ function fnAddText(id){
 
 function fnLineThrough(id){
     var textId = '#p_' + id;
+    let _token = $('meta[name="csrf-token"]').attr('content');
     $(textId).css('text-decoration','line-through');
+    $.ajax({
+        url: "/cart/add/linethrough",
+        type:"POST",
+        data:{
+            _token: _token,
+            productId: id,
+            crossed: 1    
+        },
+        success:function(response){
+            console.log(response);
+        },
+        error: function(error){
+            console.log('error');
+        }
+       });
 }
 function fnNormal(id){
     var textId = '#p_' + id;
