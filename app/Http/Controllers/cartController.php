@@ -51,7 +51,7 @@ class cartController extends Controller
                         $dateExpired = $product['dateExpired'];
                     }
 
-                    if($crossed == 'crossed' && $product['crossed'] == 1){
+                    //if($crossed == 'crossed' && $product['crossed'] == 1){
                         $store = new Store();
                         $store->amount = $product['amount'];
                         $store->product_id = $product['id'];
@@ -60,7 +60,7 @@ class cartController extends Controller
                         $store->order = $order;
                         $store->user_id = Auth::user()->id;
                         $store->save();  
-                    }elseif($crossed == 'normal'){
+                    /*}elseif($crossed == 'normal'){
                         $store = new Store();
                         $store->amount = $product['amount'];
                         $store->product_id = $product['id'];
@@ -71,13 +71,13 @@ class cartController extends Controller
                         $store->save(); 
                     }else{
                         $crossed = 'not found crossed variable';
-                    }
+                    }*/
                      
-            }
+                }
 
 
-            session()->forget('product');
-            return response($crossed);
+                session()->forget('product');
+                return response($crossed);
             }else{
                 $cart =  0;
             }
