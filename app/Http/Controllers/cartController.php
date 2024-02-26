@@ -75,7 +75,7 @@ class cartController extends Controller
 
 
             session()->forget('product');
-            return response($cart);
+            return response($store);
             }else{
                 $cart =  0;
             }
