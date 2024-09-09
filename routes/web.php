@@ -73,8 +73,8 @@ Route::group(['middleware' => ['underConstruction']], function (){
 
 	//discussion routes
 	Route::get('/discussion',[DiscussionController::class,'index']);
-	Route::get('/discussion/{id}',[DiscussionController::class,'discussion']);
 	Route::get('/discussion/create',[DiscussionController::class,'create']);
+    Route::get('/discussion/{id}',[DiscussionController::class,'discussion']);
 	Route::post('/discussion/create',[DiscussionController::class,'store']);
 	Route::post('/discussion/{id}', [CommentController::class,'store']);
 

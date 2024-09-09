@@ -13,11 +13,11 @@ class cartController extends Controller
 {
     public function cart(){
         if(Session::get('product')){
-            $cart = Session::get('product'); 
+            $cart = Session::get('product');
         }else{
             $cart =  0;
         }
-       
+
         //dd($cart);
         return view('cart',compact('cart'));
     }
@@ -25,21 +25,21 @@ class cartController extends Controller
     public function delFromCart($product)
     {
         $cart = Session::get('product');
-        
+
         foreach($cart as $key => $item){
             if($item['id'] == $product){
                 session()->forget('product.'.$key);
             }
-            
+
         }
-        
+
     }
 
     public function toWarehouse(Request $request){
         //dd('warehouse');
         if(Auth::user()->id){
             if(Session::get('product')){
-                $cart = Session::get('product'); 
+                $cart = Session::get('product');
                 //save to store
                 $order = 0;
                 $crossed = $request->crossed;
@@ -59,7 +59,7 @@ class cartController extends Controller
                         $store->expiration = $dateExpired;
                         $store->order = $order;
                         $store->user_id = Auth::user()->id;
-                        $store->save();  
+                        $store->save();
                     /*}elseif($crossed == 'normal'){
                         $store = new Store();
                         $store->amount = $product['amount'];
@@ -68,11 +68,11 @@ class cartController extends Controller
                         $store->expiration = $dateExpired;
                         $store->order = $order;
                         $store->user_id = Auth::user()->id;
-                        $store->save(); 
+                        $store->save();
                     }else{
                         $crossed = 'not found crossed variable';
                     }*/
-                     
+
                 }
 
 
@@ -84,7 +84,7 @@ class cartController extends Controller
         }else{
             return response('0');
         }
-        
+
     }
 
     public function addLinethrough(Request $request){
@@ -106,5 +106,5 @@ class cartController extends Controller
         return response('check');
         //return response($productId);
     }
-    
+
 }

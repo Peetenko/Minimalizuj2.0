@@ -33,26 +33,30 @@
 	</div>
 	@foreach($recipes as $recipe)
 	<a href="/recipes/{{$recipe->recipeId}}" style="a:decoration:none">
-		<div class="divPost shadow">	
-			<div class="foodProduct" style="background-image: url({{asset($recipe->thumbnail)}});background-size: cover; ">
-			</div>
-			<div class="divRow">
-				<div class="divTitle2">
-				@foreach ($recommendedRecipes as $rc)
-					@if ($recipe->id == $rc->recipeId)
-					<h2>{{$recipe->title}} ({{$rc->ingredients}})</h2>
-					@endif
-				@endforeach
-				</div>
-				<div class="divText">
-					{!! Str::limit($recipe->body, 100) !!}
-					
-				</div>
-			</div>
+		<div class="divPost shadow">
+            <div class="divColumnLeft">
+                <div class="foodProduct" style="background-image: url({{asset($recipe->thumbnail)}});background-size: cover; ">
+                </div>
+            </div>
+            <div class="divColumnRight">
+                <div class="divRow">
+                    <div class="divTitle2">
+                    @foreach ($recommendedRecipes as $rc)
+                        @if ($recipe->id == $rc->recipeId)
+                        <h2>{{$recipe->title}} ({{$rc->ingredients}})</h2>
+                        @endif
+                    @endforeach
+                    </div>
+                    <div class="divText">
+                        {!! Str::limit($recipe->body, 100) !!}
+
+                    </div>
+                </div>
+            </div>
 		</div>
 	</a>
 	@endforeach
-	
+
 
 
 @endsection

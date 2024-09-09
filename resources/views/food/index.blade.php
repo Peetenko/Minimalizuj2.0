@@ -8,32 +8,35 @@
 	<div class="divTitle">
 		<h1>Jedlo</h1>
 	</div>
-	
+    <div class="success h40">
+		<span class="success"></span>
+	</div>
 	<div class="divTitle">
 		<a href="/recipes"><h1>Recepty</h1></a>
 	</div>
 	<div class="divPostButtons">
 		<a href="{{asset('/food/product/create/new')}}" ><button name="divPostButtons" id="newPost">
 			<span style="font-size: 18pt;color:#659e26;">+</span><span style="text-align: middle">
-		</button> 
+		</button>
 		</a><br>
 	</div>
-	<form name="formRecipe" id="formRecipe" method="post" enctype="multipart/form-data" action="/recipes/create/new" 
+	<form name="formRecipe" id="formRecipe" method="post" enctype="multipart/form-data" action="/recipes/create/new"
 	onsubmit="return fnNewRecipe()">
 		{{csrf_field()}}
 		<meta name="csrf-token" content="{{ csrf_token() }}" />
-		<div class="divPost shadow">	
-			<div class="foodProductText">
-				<h2>Ingrediencie</h2>
-				<input class="newPostInput mgLeft5" type="text" placeholder="Hladaj Ingrediencie" name="searchIngredient" id="searchIngredient" value="" onkeyup="fnAddIngredient()" style="padding-left:0px">
-			</div>
-			<div class="divAmount">
-				<button type="button" onclick="fnClearInput()" class="btnClear"><span style="font-size: 20pt;">&#10008;</span></button>
-			</div>
+		<div class="divPost shadow">
+            <div id="divIngredients">
+                <div class="searchIngredient">
+                    <h2>Ingrediencie</h2>
+                    <input class="newPostInput mgLeft5" type="text" placeholder="Hladaj Ingrediencie" name="searchIngredient" id="searchIngredient" value="" onkeyup="fnAddIngredient()" style="padding-left:0px">
+                </div>
+                <div class="divClearIngredient">
+                    <button type="button" onclick="fnClearInput()" class="btnClear"><span style="font-size: 20pt;">&#10008;</span></button>
+                </div>
+            </div>
 		</div>
-		<div id="divIgredient">
-
-		</div>
+        <div id="divIngredient">
+        </div>
 	</form>
 	<div class="divPost">
 		<br>

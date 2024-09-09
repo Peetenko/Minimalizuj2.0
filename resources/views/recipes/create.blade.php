@@ -14,21 +14,21 @@
 	<div class="divPostButtons">
 		<a href="{{asset('/recipes/create/new')}}" ><button name="divPostButtons" id="newPost">
 			<span style="font-size: 18pt;color:#659e26;">+</span><span style="text-align: middle">
-		</button> 
+		</button>
 		</a><br>
 	</div>
-	<form name="formRecipe" id="formRecipe" method="post" enctype="multipart/form-data" action="/recipes/create/new" 
+	<form name="formRecipe" id="formRecipe" method="post" enctype="multipart/form-data" action="/recipes/create/new"
 	onsubmit="return fnNewRecipe()">
 	<meta name="csrf-token" content="{{ csrf_token() }}" />
 	{{csrf_field()}}
 	<div id="createNewRecipe">
-		<div class="divRow100 shadow">	
+		<div class="divRow100 shadow">
 			<div class="divTitle2">
 				Nadpis
 				<input class="newPostInput" type="text" name="title" id="title" value="">
 			</div>
 		</div>
-		<div class="divRow100 shadow">	
+		<div class="divRow100 shadow">
 			<div class="divTitle2">
 				Ingrediencie
 				<input class="newPostInput" type="text" name="searchIngredient" id="searchIngredient" value="" onkeyup="fnAddIngredient()">
@@ -37,14 +37,15 @@
 		<div id="divIgredient">
 
 		</div>
-		<div class="divRow250 shadow">	
+		<div class="divRow250 shadow">
 			<div class="divTitle2">
 				Text
+            </div>
 				<textarea class="textArea150" name="text1" id="text1"></textarea>
 				<button type="button" id="smallPlusButton1" class="smallPlusButton" onclick="fnAddText(2)">+</button>
-			</div>
+
 		</div>
-		<div class="divRow100 shadow">	
+		<div class="divRow100 shadow">
 			<div class="divTitle2">
 				Fotky
 				<input type="file" name="image[]" id="image" value="" multiple>
@@ -56,6 +57,6 @@
 		</div>
 	</form>
 	<div class="divSections">
-	
+
 	</div>
 @endsection

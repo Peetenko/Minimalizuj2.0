@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	
+
 	$('#btnMenu').click(function(){
         if($('#navigation').css('display') == 'none'){
 	       $('#navigation').fadeIn(400);
@@ -7,7 +7,7 @@ $(document).ready(function(){
             $('#navigation').fadeOut(400);
         }
 	});
-	
+
 	$('.divPost').hide().fadeIn(600);
     $('.divRow100,.divRow50,.divRow250').hide().fadeIn(600);
 });
@@ -34,10 +34,10 @@ function addFields(){
 			option3.text = "Image";
 			option3.value = "3";
 			textType.add(option1);
-			textType.add(option2); 
-			textType.add(option3);  
+			textType.add(option2);
+			textType.add(option3);
         container.appendChild(textType);
-        
+
         container.appendChild(document.createTextNode("Field " + (i+1)));
         var Field = "Field" + (i+1);
         var input = document.createElement("textarea");
@@ -118,7 +118,7 @@ function fnNewRecipe()
 {
     var text = $('#text1').val();
     var title = $('#title').val();
-    
+
 
     if(text == ''){
         alert('Vyplň text');
@@ -128,7 +128,7 @@ function fnNewRecipe()
         alert('Vyplň nadpis');
         return false;
     }
-   
+
 }
 
 function fnFocusBorder(){
@@ -138,7 +138,7 @@ function fnFocusBorder(){
 function fnDetail(element,id){
     var detail = '#detail' + id;
     $(detail).toggle();
-   
+
 }
 
 function fnAddProduct(id){
@@ -162,7 +162,7 @@ function fnAddProduct(id){
           if(response) {
             $('.success').text(response.success).fadeIn(500).fadeOut(2000);
             $('#cartCount').text(response.cartCount);
-            
+
           }
         },
         error: function(error) {
@@ -191,7 +191,7 @@ function fnAddIngredient(){
             var arrayLen = response.length;
             //console.log(arrayLen);
             //$('.success').text(response.success).fadeIn(500).fadeOut(2000);
-            $('#divIgredient').html(response);
+            $('#divIngredient').html(response);
           }
         },
         error: function(error) {
@@ -237,7 +237,7 @@ function fnUpdateExpiration(storeId) {
 }
 
 function fnToWarehouse(crossed){
-    
+
     let _token = $('meta[name="csrf-token"]').attr('content');
     if(crossed == 'crossed'){
         console.log('preciarknute');
@@ -248,16 +248,16 @@ function fnToWarehouse(crossed){
         type:"POST",
         data:{
             _token: _token,
-            crossed: crossed    
+            crossed: crossed
         },
         success:function(response){
             console.log(response);
             if(response == '0'){
                 alert('Pre pouzitie skladu musis byt prihlaseny');
             }else{
-               window.location.replace('/store'); 
+               window.location.replace('/store');
             }
-            
+
         },
         error: function(error){
             console.log('error');
@@ -273,7 +273,7 @@ function fnDelProduct(trigger){
         url: "/cart/del/" + trigger,
         type:"POST",
         data:{
-            _token: _token    
+            _token: _token
         },
         success:function(response){
             var cartCount = document.getElementById('cartCount').innerHTML;
@@ -283,14 +283,14 @@ function fnDelProduct(trigger){
             }
             document.getElementById('cartCount').innerHTML = cartCount;
             console.log(cartCount);
-            
+
             //return response;
         },
         error: function(error){
             console.log('error');
         }
        });
-    
+
 
 
 }
@@ -304,12 +304,12 @@ function fnDelProductRecipe(ingredient,recipeId){
         data:{
             _token: _token,
             recipeId: recipeId,
-            ingredient: ingredient   
+            ingredient: ingredient
         },
         success:function(response){
             $(product).hide();
             console.log(response);
-            
+
             //return response;
         },
         error: function(error){
@@ -327,7 +327,7 @@ function fnDelProductWarehouse(trigger){
         type:"POST",
         data:{
             _token: _token,
-            storeId: trigger    
+            storeId: trigger
         },
         success:function(response){
             console.log(response);
@@ -336,17 +336,17 @@ function fnDelProductWarehouse(trigger){
             console.log('error');
         }
        });
-    
+
 
 
 }
 
 function fnDelImg(element){
-    
+
     var img = '#img' + element;
     var button = '#button' + element;
     $(img).hide();
-    $(button).hide();  
+    $(button).hide();
     console.log(element,img);
 
 }
@@ -365,7 +365,7 @@ function fnDelImg(element){
           _token: _token
         },
         success:function(response){
-            
+
           window.location.href = "{{ route('/')}}";
         },
         error: function(error) {
@@ -373,14 +373,14 @@ function fnDelImg(element){
         }
        });
     }else{
-        
+
         alert('fill out password and real email address');
         return false;
     }
 }*/
 
 function fnRegistration(){
-  
+
     var name = $('#name').val();
     var email = $('#email').val();
     var phone = $('#phone').val();
@@ -433,12 +433,12 @@ function fnOpenRecipe(id){
 }
 
 function fnAddText(id){
-    var idPlus = id + 1; 
+    var idPlus = id + 1;
     var idMinus = id - 1;
     var smallPlussButton = '#smallPlusButton'+idMinus;
     var html = '<div class="divRow250 shadow"><div class="divTitle2">Text' + id + '</div>' +
-                '<textarea class="textArea150" name="text' + 
-                id + '" id="text' + id + '"></textarea><button type="button" class="smallPlusButton" onclick="fnAddText(' + 
+                '<textarea class="textArea150" name="text' +
+                id + '" id="text' + id + '"></textarea><button type="button" class="smallPlusButton" onclick="fnAddText(' +
                 idPlus + ')" id="smallPlusButton' + id + '">+</button></div>';
     //var container = document.getElementById("container");
     $('#createNewRecipe').append(html);
@@ -457,7 +457,7 @@ function fnLineThrough(id){
         data:{
             _token: _token,
             productId: id,
-            crossed: 1    
+            crossed: 1
         },
         success:function(response){
             console.log(response);
@@ -486,7 +486,7 @@ function fnFilter(text,section){
     }else if(section == 'sell'){
         var thisUrl = '/sellFilter';
     }
-    
+
     $.ajax({
         url: thisUrl,
         type:"get",
@@ -507,7 +507,7 @@ function fnFilter(text,section){
 }
 
 
-    
+
 
 
 

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Recipe;
 use DB;
-use Session;	
+use Session;
 use App\Http\Controllers\cartController;
 use Auth;
 
@@ -16,8 +16,8 @@ class foodController extends Controller
 		$sections = DB::table('sections')
 			->select('*')
 			->get();
-		
-		return view('food.index',compact('sections'));	
+
+		return view('food.index',compact('sections'));
 	}
 
 	public function section($section){
@@ -33,7 +33,7 @@ class foodController extends Controller
 			->select('name')
 			->where('id',$section)
 			->first();
-		
+
 		return view('food.product',compact('products','measures','sectionName'));
 	}
 
@@ -123,16 +123,16 @@ class foodController extends Controller
 
 		$nextRecipe = $recipe[0]->id + 1;
 
-		return view('recipes.recipe',compact('recipe','ingredients','nextRecipe','shareLink'));	
+		return view('recipes.recipe',compact('recipe','ingredients','nextRecipe','shareLink'));
 	}
 
 	public function recipeCreate(){
-		
+
 		$recipeFields = DB::table('recipefields')
 			->select('*')
 			->get();
 			if(Session::get('product')){
-				$cart = Session::get('product'); 
+				$cart = Session::get('product');
 			}else{
 				$cart =  0;
 			}
@@ -140,7 +140,7 @@ class foodController extends Controller
 	}
 
 	public function editRecipe($recipeId){
-		
+
 		$recipe = DB::table('recipes')
 			->select('*')
 			->where('recipeId', $recipeId)
@@ -154,7 +154,7 @@ class foodController extends Controller
 
 		//dd($recipeId,$recipe,$ingredients);
 		return view('recipes.edit',compact('recipe','ingredients'));
-		
+
 	}
 
 	public function delFromRecipe(Request $request){
@@ -193,7 +193,7 @@ class foodController extends Controller
 				]);
 			}
 		}
-		
+
 		if(isset($insertIngredients)){
 			$request->session()->forget('product');
 		}
@@ -241,18 +241,19 @@ class foodController extends Controller
 				}else{
 					$measureOptions = $measureOptions . '<option value="'. $measure->name . '">' . $measure->name . '</option>';
 				}
-				
+
 				}
 				$style = 'style="background-image:url(' . asset($product->icon) . ')"';
 
                $row = $row . '<div class="divRow100 shadow"><div class="foodProduct"'. $style .'></div><div class="foodProductText"><span class="spanProduct">' .
-               $product->name . '</span><input class="productAmount" type="number" id="amount'. $product->id. '" maxlength="7" value="' .  
-               $product->weight . '"> ' . '<select class="measure" name="measure" id="measure'.$product->id . '">' . $measureOptions . '</select>' .
-               	  '</div><button class="btnAddProduct" onclick="fnAddProduct('.$product->id .')" type="button"> + </button></div>'; 
-            $measureOptions = ''; 
+               $product->name . '</span><div class="divProductAttributeWrap"><div class="divMeasureWrap"><input class="productAmount" type="number" id="amount'. $product->id. '" maxlength="7" value="' .
+               $product->weight . '"> ' . '<select class="measure" name="measure" id="measure'.$product->id . '">' . $measureOptions . '</select></div>' .
+               '<div class="divExpired"><input id="dateExpired'.$product->id . '" class="dateExpired" type="date"></div></div>' .
+               	  '</div><button class="btnAddProduct" onclick="fnAddProduct('.$product->id .')" type="button"> + </button></div>';
+            $measureOptions = '';
             }
 		return response($row);
-		
+
 		/*return response()->json(['success'=> 'Produkt '. $product[0]->name . ' pridany',
 			'measure' => $product[0]->measure,
 			'amount' => $product[0]->amount,
@@ -263,7 +264,7 @@ class foodController extends Controller
 	}
 
 	public function recipeInsert(Request $request){
-		$ingredients = Session::get('product');	
+		$ingredients = Session::get('product');
 		$text = $request->text1;
 		$title = $request->title;
 		$fieldArray = array();
@@ -288,7 +289,7 @@ class foodController extends Controller
 					break;
 
 				}
-				
+
 
 			}
 		}else{
@@ -301,8 +302,8 @@ class foodController extends Controller
             $filenames = $filenames . $imagePath . ',';
             $image->move(public_path() .'/images/recipes/' . $dirName . '/',$filename);
   	    }
-  	    
-		
+
+
 		if(Session::get('userId')){
 			$userId = Session::get('userId');
 		}else{
@@ -349,7 +350,7 @@ class foodController extends Controller
 			}
 		}*/
 		return redirect('/recipes/'.$dirName);
-        
+
 	}
 
 	public function store(){
@@ -364,7 +365,7 @@ class foodController extends Controller
 			->get()
 			->toArray();
 		$today =  date_format(now(),'y-m-d');
-			
+
 		return view('store.store',compact('store','today'));
 	}
 
@@ -446,5 +447,5 @@ class foodController extends Controller
 	}
 
 
-    
+
 }

@@ -6,31 +6,40 @@ Sell NEW
 @endsection
 
 @section ('content')
-	<h1>Predám</h1>
+    <div class="divTitle">
+	    <h1>Predám</h1>
+    </div>
 	<form name="formSale" method="post" enctype="multipart/form-data" action="/sell">
 		{{csrf_field()}}
-	<div class="divSellCreate">
-		<label>Name</label>
-		<input class="newPostInput" type="text" name="name" value="">
-		<label>Email</label>
-		<input class="newPostInput" type="text" name="email" value="">
-		<label>Phone</label>
-		<input class="newPostInput" type="text" name="phone" value="">
-		<label>Title</label>
-		<input class="newPostInput" type="text" name="title" value="">
-		<label>Post</label>
-		<textarea class="newPostInput" name="body"></textarea>
-		<label>Cena</label>
-		<input class="newPostInput" type="text" name="price" value="">
-		<div class="divRow100">
-			<label>Image</label>
+        <div class="divRow100 shadow">
+            <div class="divTitle2">Name</div>
+		    <input class="newPostInput" type="text" name="name" value="">
+        </div>
+		<div class="divRow100 shadow">
+            <div class="divTitle2">Email</div>
+		    <input class="newPostInput" type="text" name="email" value="">
+        </div>
+		<div class="divRow100 shadow">
+            <div class="divTitle2">Phone</div>
+		    <input class="newPostInput" type="text" name="phone" value="">
+        </div>
+		<div class="divRow100 shadow">
+            <div class="divTitle2">Nadpis</div>
+		    <input class="newPostInput" type="text" name="title" value="">
+        </div>
+		<div class="divRow250 shadow">
+            <div class="divTitle2">Popis</div>
+		    <textarea class="textArea150" name="body"></textarea>
+        </div>
+		<div class="divRow100 shadow">
+            <div class="divTitle2">Cena</div>
+		    <input class="newPostInput" type="text" name="price" value="">
+        </div>
+		<div class="divRow100 shadow">
+            <div class="divTitle2">Fotky</div>
 			<input class="newPostInput" type="file" name="image[]" multiple="multiple" value="">
 		</div>
-	</div>
-		
-		
 
-		
 		<div class="divPostButtons">
 			<button id="newPost" type="submit">submit</button>
 		</div>
@@ -38,7 +47,7 @@ Sell NEW
 		<input type="text" id="member" name="member" value="">Number of members: (max. 10)<br />
 		--}}
  		<div id="container"/>
-		
+
 	</form>
 
 
